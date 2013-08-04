@@ -17,7 +17,13 @@
         this.element = typeof el == 'object' ? el : document.getElementById(el);
         this.options = extend(defOptions, options);
         XDate.defaultLocale = this.options.locale;
-        this.date = this.options.defDate;
+
+        if (this.element.value != null && this.element.value != '') {
+            this.date = new XDate(this.element.value);
+        } else {
+            this.date = this.options.defDate;
+        }
+
         var that = this, opt=that.options;
 
         if (opt.startYearOffset>=opt.endYearOffset) {
@@ -135,8 +141,6 @@
             dlg.style.opacity = 1;
 
             setDate(that, title);
-
-            console.log(that.dayScroll.currPageY);
         }, false);
     };
 
