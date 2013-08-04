@@ -1,0 +1,61 @@
+/*
+colors:
+text black: #080808
+text grey: #A0A0A0
+background: #F0F0F0
+blue1: #30B0E0    - horizontal line
+blue2: #68C0E8
+*/
+
+.hdw-theme {
+    background-color: #F0F0F0;
+    color: #080808;
+    font-size: 14px;
+}
+
+.hdw-title.theme {
+    color: #68C0E8;
+    border-bottom: 2px solid #30B0E0;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.hdw-btn.theme {
+    text-align: center;
+    border-top: 1px solid #D8D8D8;
+}
+
+.hdw-btn.btn-down {
+    background-color: #68C0E8;
+}
+
+.hdw-day-li.theme {
+    text-align:center;
+    border:1px solid transparent;
+}
+
+.hdv-day-active.theme {
+    border-top:2px solid #30B0E0;
+    border-bottom:2px solid #30B0E0;
+}
+
+.hdw-month-li.theme {
+    text-align:center;
+    border:1px solid transparent;
+}
+
+.hdv-month-active.theme {
+    border-top:2px solid #30B0E0;
+    border-bottom:2px solid #30B0E0;
+}
+
+.hdw-year-li.theme {
+    text-align:center;
+    border:1px solid transparent;
+}
+
+.hdv-year-active.theme {
+    border-top:2px solid #30B0E0;
+    border-bottom:2px solid #30B0E0;
+}
