@@ -4,6 +4,13 @@
  */
 
 (function(){
+    /*var isTouchPad = (/hp-tablet/gi).test(navigator.appVersion),
+        hasTouch = 'ontouchstart' in window && !isTouchPad,
+        START_EV = hasTouch ? 'touchstart' : 'mousedown',
+        MOVE_EV = hasTouch ? 'touchmove' : 'mousemove',
+        END_EV = hasTouch ? 'touchend' : 'mouseup',
+        CANCEL_EV = hasTouch ? 'touchcancel' : 'mouseup';*/
+
     var defOptions = {
         onChange: function(val) {},
         defDate: new XDate(),
@@ -46,7 +53,8 @@
 
         //day selector
         var daySel = newDiv('hdw-day-sel', dlg);
-        newDiv('hdv-day-active theme', dlg);
+        newDiv('hdw-day-active theme', dlg);
+        newDiv('hdw-day-grad theme', dlg);
 
         var scl =  newDiv('hdw-day-scl', daySel);
         var ul = newElement('ul','hdw-day-ul',scl);
@@ -60,7 +68,8 @@
 
         //month selector
         var monthSel = newDiv('hdw-month-sel', dlg);
-        newDiv('hdv-month-active theme', dlg);
+        newDiv('hdw-month-active theme', dlg);
+        newDiv('hdw-month-grad theme', dlg);
 
         scl =  newDiv('hdw-month-scl', monthSel);
         ul = newElement('ul','hdw-month-ul',scl);
@@ -74,7 +83,8 @@
 
         //year selector
         var yearSel = newDiv('hdw-year-sel', dlg);
-        newDiv('hdv-year-active theme', dlg);
+        newDiv('hdw-year-active theme', dlg);
+        newDiv('hdw-year-grad theme', dlg);
 
         scl =  newDiv('hdw-year-scl', yearSel);
         ul = newElement('ul','hdw-year-ul',scl);
@@ -192,6 +202,17 @@
     function updateDate(date, that, title) {
         title.innerText = date.toString('ddd d MMMM, yyyy', that.options.locale);
     }
+
+    /*function deliverTouchEvents(from, to) {
+        var deliver = function(e) {
+            to.dispatchEvent(e);
+        }
+
+        from.addEventListener(START_EV, deliver, true);
+        from.addEventListener(MOVE_EV, deliver, true);
+        from.addEventListener(END_EV, deliver, true);
+        from.addEventListener(CANCEL_EV, deliver, true);
+    }*/
 
     function newDiv(className, parent) {
         var div = document.createElement('div');
