@@ -35,9 +35,24 @@ blue2: #68C0E8
     border:1px solid transparent;
 }
 
-.hdv-day-active.theme {
+.hdw-day-active.theme {
     border-top:2px solid #30B0E0;
     border-bottom:2px solid #30B0E0;
+}
+
+.hdw-day-grad.theme {
+    /* IE10 Consumer Preview */
+    background-image: -ms-linear-gradient(top, #F0F0F0 0%, rgba(255,255,255,0)  50%, #F0F0F0 100%);
+    /* Mozilla Firefox */
+    background-image: -moz-linear-gradient(top, #F0F0F0 0%, rgba(255,255,255,0)  50%, #F0F0F0 100%);
+    /* Opera */
+    background-image: -o-linear-gradient(top, #F0F0F0 0%, rgba(255,255,255,0)  50%, #F0F0F0 100%);
+    /* Webkit (Safari/Chrome 10) */
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #F0F0F0), color-stop(0.5, rgba(255,255,255,0) ), color-stop(1, #F0F0F0));
+    /* Webkit (Chrome 11+) */
+    background-image: -webkit-linear-gradient(top, #F0F0F0 0%, rgba(255,255,255,0)  50%, #F0F0F0 100%);
+    /* W3C Markup, IE10 Release Preview */
+    background-image: linear-gradient(to bottom, #F0F0F0 0%, rgba(255,255,255,0)  50%, #F0F0F0 100%);
 }
 
 .hdw-month-li.theme {
@@ -45,9 +60,24 @@ blue2: #68C0E8
     border:1px solid transparent;
 }
 
-.hdv-month-active.theme {
+.hdw-month-active.theme {
     border-top:2px solid #30B0E0;
     border-bottom:2px solid #30B0E0;
+}
+
+.hdw-month-grad.theme {
+    /* IE10 Consumer Preview */
+    background-image: -ms-linear-gradient(top, #F0F0F0 0%, rgba(255,255,255,0)  50%, #F0F0F0 100%);
+    /* Mozilla Firefox */
+    background-image: -moz-linear-gradient(top, #F0F0F0 0%, rgba(255,255,255,0)  50%, #F0F0F0 100%);
+    /* Opera */
+    background-image: -o-linear-gradient(top, #F0F0F0 0%, rgba(255,255,255,0)  50%, #F0F0F0 100%);
+    /* Webkit (Safari/Chrome 10) */
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #F0F0F0), color-stop(0.5, rgba(255,255,255,0) ), color-stop(1, #F0F0F0));
+    /* Webkit (Chrome 11+) */
+    background-image: -webkit-linear-gradient(top, #F0F0F0 0%, rgba(255,255,255,0)  50%, #F0F0F0 100%);
+    /* W3C Markup, IE10 Release Preview */
+    background-image: linear-gradient(to bottom, #F0F0F0 0%, rgba(255,255,255,0)  50%, #F0F0F0 100%);
 }
 
 .hdw-year-li.theme {
@@ -55,7 +85,22 @@ blue2: #68C0E8
     border:1px solid transparent;
 }
 
-.hdv-year-active.theme {
+.hdw-year-active.theme {
     border-top:2px solid #30B0E0;
     border-bottom:2px solid #30B0E0;
+}
+
+.hdw-year-grad.theme {
+    /* IE10 Consumer Preview */
+    background-image: -ms-linear-gradient(top, #F0F0F0 0%, rgba(255,255,255,0)  50%, #F0F0F0 100%);
+    /* Mozilla Firefox */
+    background-image: -moz-linear-gradient(top, #F0F0F0 0%, rgba(255,255,255,0)  50%, #F0F0F0 100%);
+    /* Opera */
+    background-image: -o-linear-gradient(top, #F0F0F0 0%, rgba(255,255,255,0)  50%, #F0F0F0 100%);
+    /* Webkit (Safari/Chrome 10) */
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #F0F0F0), color-stop(0.5, rgba(255,255,255,0) ), color-stop(1, #F0F0F0));
+    /* Webkit (Chrome 11+) */
+    background-image: -webkit-linear-gradient(top, #F0F0F0 0%, rgba(255,255,255,0)  50%, #F0F0F0 100%);
+    /* W3C Markup, IE10 Release Preview */
+    background-image: linear-gradient(to bottom, #F0F0F0 0%, rgba(255,255,255,0)  50%, #F0F0F0 100%);
 }

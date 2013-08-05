@@ -60,14 +60,26 @@
     z-index: 1;
 }
 
-.hdv-day-active {
+.hdw-day-grad {
+    margin: 0;
+    position: absolute;
+    top: 66px;
+    bottom: 41px;
+    left: 16px;
+    width: 80px;
+    overflow:auto;
+    z-index: 2;
+    pointer-events:none;
+}
+
+.hdw-day-active {
     margin: 0;
     position: absolute;
     top: 126px;
     left: 17px;
     height:56px;
     width: 78px;
-    background-color: transparent;
+    background-color: rgba(255,255,255,0) ;
     z-index: 0;
 }
 
@@ -102,7 +114,19 @@
     z-index: 1;
 }
 
-.hdv-month-active {
+.hdw-month-grad {
+    position: absolute;
+    top: 66px;
+    bottom: 41px;
+    width: 80px;
+    left: 110px;
+    height: 180px;
+    overflow:auto;
+    z-index: 2;
+    pointer-events:none;
+}
+
+.hdw-month-active {
     position: absolute;
     top: 126px;
     height:56px;
@@ -142,7 +166,20 @@
     overflow:auto;
     z-index: 1;
 }
-.hdv-year-active {
+
+.hdw-year-grad {
+    margin: 0;
+    position: absolute;
+    top: 66px;
+    bottom: 41px;
+    right: 16px;
+    width: 80px;
+    overflow:auto;
+    z-index:2;
+    pointer-events:none;
+}
+
+.hdw-year-active {
     position: absolute;
     top: 126px;
     height:56px;
