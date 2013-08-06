@@ -80,7 +80,8 @@
     height:56px;
     width: 78px;
     background-color: rgba(255,255,255,0) ;
-    z-index: 0;
+    z-index: 3;
+    pointer-events:none;
 }
 
 .hdw-day-scl {
@@ -133,7 +134,8 @@
     width: 78px;
     left: 111px;
     background-color: transparent;
-    z-index: 0;
+    z-index: 3;
+    pointer-events:none;
 }
 
 .hdw-month-scl {
@@ -186,7 +188,8 @@
     width: 78px;
     right: 17px;
     background-color: transparent;
-    z-index: 0;
+    z-index: 3;
+    pointer-events:none;
 }
 
 .hdw-year-scl {
