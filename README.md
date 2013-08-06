@@ -12,10 +12,20 @@ Look into example folder.
 Changelog
 ---------
 
+### 0.2 ###
+
++ new darkula base theme
+* use of first stable build of xButton lib (0.1)
+* use xbutton for <input> events, instead of 'click' handler
+- some fixes for base design
+
 ### 0.1 ###
 
- * initial version
+ + initial version
 
++ new feature
+* updates
+- bug fixes
 
 ## License
 
