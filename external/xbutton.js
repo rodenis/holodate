@@ -32,15 +32,17 @@
     };
 
     function touchHandler(e) {
-        var data = this.btnData;
+        var data = this.btnData,
+            point = hasTouch ? e.touches[0] : e;
+
         if (e.type == START_EV) {
             addClass(data.style, this);
-            data.x = e.touches[0].pageX;
-            data.y = e.touches[0].pageY;
+            data.x = point.pageX;
+            data.y = point.pageY;
             data.cancel = false;
         } else if (e.type == MOVE_EV) {
-            var dx = Math.abs(data.x - e.touches[0].pageX);
-            var dy = Math.abs(data.y - e.touches[0].pageY);
+            var dx = Math.abs(data.x - point.pageX);
+            var dy = Math.abs(data.y - point.pageY);
             if (dx>10 || dy > 10) {
                 data.cancel = true;
                 removeClass(data.style, this);
