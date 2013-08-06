@@ -12,7 +12,7 @@
         CANCEL_EV = hasTouch ? 'touchcancel' : 'mouseup';
 
     var XButton = function(el, relations, handler, btnDownClass){
-        var btn = this.element = typeof el == 'object' ? el : document.getElementById(el);;
+        var btn = this.element = typeof el == 'object' ? el : document.getElementById(el);
         btn.btnData = {};
         btn.btnData.relations = relations;
         btn.btnData.style = btnDownClass;
@@ -20,14 +20,21 @@
         btn.addEventListener(START_EV, touchHandler, false);
         btn.addEventListener(MOVE_EV, touchHandler, false);
         btn.addEventListener(END_EV, touchHandler, false);
+        if (hasTouch) {
+            btn.addEventListener(CANCEL_EV, touchHandler, false);
+        }
     };
 
     XButton.prototype = {
         destroy : function() {
-            this.element.btnData = null;
-            this.element.removeEventListener(START_EV, touchHandler, false );
-            this.element.removeEventListener(MOVE_EV, touchHandler, false );
-            this.element.removeEventListener(END_EV, touchHandler, false );
+            var btn = this.element;
+            btn.btnData = null;
+            btn.removeEventListener(START_EV, touchHandler, false );
+            btn.removeEventListener(MOVE_EV, touchHandler, false );
+            btn.removeEventListener(END_EV, touchHandler, false );
+            if (hasTouch) {
+                btn.removeEventListener(CANCEL_EV, touchHandler, false);
+            }
         }
     };
 
@@ -51,7 +58,7 @@
             if (!data.cancel) {
                 removeClass(data.style, this);
                 //execute handler
-                data.handler(data.relations);
+                data.handler.call(this, data.relations);
             }
         } else if (e.type == CANCEL_EV) {
             data.cancel = true;
@@ -60,6 +67,7 @@
     }
 
     function addClass( classname, element ) {
+        if (classname == null || classname == '') return;
         var cn = element.className;
         //test for existance
         if( cn.indexOf( classname ) != -1 ) {
@@ -73,6 +81,7 @@
     }
 
     function removeClass( classname, element ) {
+        if (classname == null || classname == '') return;
         var cn = element.className;
         var rxp = new RegExp( "\\s?\\b"+classname+"\\b", "g" );
         cn = cn.replace( rxp, '' );
