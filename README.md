@@ -24,11 +24,10 @@ Changelog
 - + initial version
 
 Legend
----------
 
-+ new feature
-* updates
-- bug fixes
+- + new feature
+- * updates
+- - bug fixes
 
 ## License
 
