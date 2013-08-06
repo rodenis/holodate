@@ -23,6 +23,9 @@ Changelog
 
 - + initial version
 
+Legend
+---------
+
 + new feature
 * updates
 - bug fixes
