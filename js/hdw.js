@@ -143,15 +143,7 @@
 
         this.xbtn = XButton(btn, {dlg: dlg, ovl: ovl, hdw: this}, onOkBtnClick, 'btn-down');
 
-        this.element.addEventListener('click', function() {
-            //this.removeEventListener('click', arguments.callee, false );
-            ovl.style.display = 'block';
-            dlg.style.display = 'block';
-            ovl.style.opacity = 0.5;
-            dlg.style.opacity = 1;
-
-            setDate(that, title);
-        }, false);
+        this.xElement = XButton(this.element, {dlg: dlg, ovl: ovl, that: that, title: title} , elClick, '');
     };
 
     HDW.prototype = {
@@ -164,8 +156,24 @@
             this.monthScroll = null;
             this.yearScroll.destroy();
             this.yearScroll = null;
+            this.xElement.destroy();
+            this.xElement = null;
         }
     };
+
+    function elClick(rel) {
+        var dlg = rel.dlg,
+            ovl = rel.ovl,
+            that = rel.that,
+            title = rel.title;
+
+        ovl.style.display = 'block';
+        dlg.style.display = 'block';
+        ovl.style.opacity = 0.5;
+        dlg.style.opacity = 1;
+
+        setDate(that, title);
+    }
 
     function onOkBtnClick(rel) {
         var dlg = rel.dlg;
