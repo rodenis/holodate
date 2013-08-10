@@ -1,5 +1,5 @@
 /*!
- * xButton v0.1 ~ Copyright (c) 2013 Denis Rodin, http://galaxyard.com
+ * xButton v0.3 ~ Copyright (c) 2013 Denis Rodin, http://galaxyard.com
  * Released under MIT license
  */
 
@@ -11,9 +11,10 @@
         END_EV = hasTouch ? 'touchend' : 'mouseup',
         CANCEL_EV = hasTouch ? 'touchcancel' : 'mouseup';
 
-    var XButton = function(el, relations, handler, btnDownClass){
+    var XButton = function(el, relations, handler, btnDownClass, delta){
         var btn = this.element = typeof el == 'object' ? el : document.getElementById(el);
         btn.btnData = {};
+        btn.btnData.delta = delta || 10;
         btn.btnData.relations = relations;
         btn.btnData.style = btnDownClass;
         btn.btnData.handler = handler;
@@ -40,6 +41,7 @@
 
     function touchHandler(e) {
         var data = this.btnData,
+            delta = data.delta,
             point = hasTouch ? e.touches[0] : e;
 
         if (e.type == START_EV) {
@@ -50,7 +52,7 @@
         } else if (e.type == MOVE_EV) {
             var dx = Math.abs(data.x - point.pageX);
             var dy = Math.abs(data.y - point.pageY);
-            if (dx>10 || dy > 10) {
+            if (dx > delta || dy > delta) {
                 data.cancel = true;
                 removeClass(data.style, this);
             }
@@ -88,7 +90,7 @@
         element.className = cn;
     }
 
-    window.XButton = function(element, relations, handler, style) {
-        return new XButton(element, relations, handler, style);
+    window.XButton = function(element, relations, handler, style, delta) {
+        return new XButton(element, relations, handler, style, delta);
     };
 }());
