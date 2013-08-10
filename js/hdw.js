@@ -1,5 +1,5 @@
 /*!
- * HoloDateWidget v0.1 ~ Copyright (c) 2013 Denis Rodin, http://galaxyard.com
+ * HoloDateWidget v0.2.1 ~ Copyright (c) 2013 Denis Rodin, http://galaxyard.com
  * Released under MIT license
  */
 

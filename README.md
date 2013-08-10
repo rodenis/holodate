@@ -12,6 +12,10 @@ Look into example folder.
 Changelog
 ---------
 
+### 0.2.1 ###
+
+- * use of xButton lib version 0.3
+
 ### 0.2 ###
 
 - + new darkula base theme
