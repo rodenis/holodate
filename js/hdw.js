@@ -16,6 +16,7 @@
         defDate: new XDate(),
         locale: 'ru',
         dateFormat: 'dd/MM/yyyy',
+        titleDateFormat: 'ddd d MMMM, yyyy',
         startYearOffset: -10,
         endYearOffset: +10
     };
@@ -49,7 +50,7 @@
         btn.innerText = 'OK';
 
         var title = newDiv('hdw-title theme', dlg);
-        title.innerText = that.options.defDate.toString('ddd d MMMM, yyyy', that.options.locale);
+        title.innerText = that.options.defDate.toString(that.options.titleDateFormat, that.options.locale);
 
         //day selector
         var daySel = newDiv('hdw-day-sel', dlg);
@@ -192,7 +193,7 @@
 
     function setDate(that, title) {
         var date = that.date;
-        title.innerText = date.toString('ddd d MMMM, yyyy', that.options.locale);
+        title.innerText = date.toString(that.options.titleDateFormat, that.options.locale);
         var day = date.getDate()-1;
         var month = date.getMonth();
         var yearNum = date.getFullYear() - that.startYear;
@@ -208,7 +209,7 @@
     }
 
     function updateDate(date, that, title) {
-        title.innerText = date.toString('ddd d MMMM, yyyy', that.options.locale);
+        title.innerText = date.toString(that.options.titleDateFormat, that.options.locale);
     }
 
     /*function deliverTouchEvents(from, to) {
