@@ -7,5 +7,5 @@ document.addEventListener( 'DOMContentLoaded', function(){
 function docReady() {
     var picker = document.getElementById('date');
 
-    var dateWidget = HDW(picker);
+    HDW(picker, {startYearOffset: -100});
 }
