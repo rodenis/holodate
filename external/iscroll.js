@@ -351,7 +351,10 @@ iScroll.prototype = {
 
 		if (that.options.useTransition || that.options.zoom) that._transitionTime(0);
 
-        that._stopIfAnimating();
+        if (that.animating) {
+            that.stop();
+            return;
+        }
 
 		that.moved = false;
 		that.animating = false;
@@ -714,17 +717,6 @@ iScroll.prototype = {
 		
 		that._startAni();
 	},
-
-
-
-    /**
-    * My code
-    */
-
-    _stopIfAnimating: function() {
-        var that = this;
-        if (that.animating) that.stop();
-    },
 
 	/**
 	*
