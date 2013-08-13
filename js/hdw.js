@@ -26,7 +26,7 @@
         this.options = extend(defOptions, options);
         XDate.defaultLocale = this.options.locale;
 
-        if (this.element.value != null && this.element.value != '') {
+        if (this.element.value != null && this.element.value != '' && this.element.value.match(/^(\d{4})(-(\d{2})(-(\d{2})([T ](\d{2}):(\d{2})(:(\d{2})(\.(\d+))?)?(Z|(([-+])(\d{2})(:?(\d{2}))?))?)?)?)?$/)) {
             this.date = new XDate(this.element.value);
         } else {
             this.date = this.options.defDate;
