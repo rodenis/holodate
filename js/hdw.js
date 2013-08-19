@@ -16,7 +16,7 @@
         defDate: new XDate(),
         locale: 'ru',
         dateFormat: 'dd/MM/yyyy',
-        titleDateFormat: 'ddd d MMMM, yyyy',
+        titleDateFormat: 'd MMMM yyyy',
         startYearOffset: -10,
         endYearOffset: +10
     };
@@ -76,9 +76,10 @@
         ul = newElement('ul','hdw-month-ul',scl);
 
         li = newElement('li','hdw-month-li theme',ul);
+        var months = XDate.locales[opt.locale].monthNamesShort;
         for (var i=1; i<13; ++i) {
             li = newElement('li','hdw-month-li theme',ul);
-            li.innerText = i;
+            li.innerText = months[i-1];
         }
         newElement('li','hdw-month-li theme',ul);
 
